@@ -1,3 +1,5 @@
+let games = [];
+
 class Game {
     constructor(id, nome, edicao, preco) {
         this.id = id;
@@ -7,4 +9,4 @@ class Game {
     }
 }
 
-module.exports = Game;
+module.exports = { games, Game };

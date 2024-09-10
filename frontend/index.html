@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Loja de Jogos</title>
+</head>
+<body>
+    <h1 class="nav-title">Loja de Jogos</h1>
+    <div class="container">
+        <!-- Container do Formulário -->
+        <div class="form-container">
+            <form id="gameForm">
+                <h2>Cadastrar jogo</h2>
+                <input type="hidden" id="gameId">
+                <input type="text" id="nome" placeholder="Nome do Jogo" required>
+                <input type="text" id="edicao" placeholder="Edição do Jogo" required>
+                <input type="number" id="preco" placeholder="Preço do Jogo" required step="0.01" min="0">
+                <button type="submit">Cadastrar Jogo</button>
+            </form>
+        </div>
+        <!-- Container da Tabela -->
+        <div class="table-container">
+            <h3>Lista de Jogos</h3>
+            <table id="gamesTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Edição</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                        <th>Editar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Corpo da tabela - onde os jogos vão ser inseridos -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
