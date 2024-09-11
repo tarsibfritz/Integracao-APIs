@@ -1,12 +1,13 @@
-const express = require('express');
+import express from 'express';
+import { criarGame, listarGames, obterGamePorId, editarGame, excluirGame } from '../controller/gameController.js';
+
 const router = express.Router();
-const gameController = require('../controller/gameController');
 
 // Rotas
-router.post('/games', gameController.criarGame);
-router.get('/games', gameController.listarGames);
-router.get('/games/:id', gameController.obterGamePorId);
-router.put('/games/:id', gameController.editarGame);
-router.delete('/games/:id', gameController.excluirGame);
+router.post('/games', criarGame);
+router.get('/games', listarGames);
+router.get('/games/:id', obterGamePorId);
+router.put('/games/:id', editarGame);
+router.delete('/games/:id', excluirGame);
 
-module.exports = router;
+export default router;
