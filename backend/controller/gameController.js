@@ -1,7 +1,7 @@
-const { games, Game } = require('../models/gameModel');
+import { games, Game } from '../models/gameModel.js';
 
 // Criar um novo jogo
-exports.criarGame = (req, res) => {
+export const criarGame = (req, res) => {
     const { nome, edicao, preco } = req.body;
     const novoId = games.length > 0 ? Math.max(...games.map(game => game.id)) + 1 : 1;
     const novoGame = new Game(novoId, nome, edicao, preco);
@@ -10,12 +10,12 @@ exports.criarGame = (req, res) => {
 };
 
 // Listar todos os jogos
-exports.listarGames = (req, res) => {
+export const listarGames = (req, res) => {
     res.status(200).json(games);
 };
 
 // Listar jogo selecionado
-exports.obterGamePorId = (req, res) => {
+export const obterGamePorId = (req, res) => {
     const { id } = req.params;
     const game = games.find(game => game.id === parseInt(id));
     
@@ -26,7 +26,8 @@ exports.obterGamePorId = (req, res) => {
     }
 };
 
-exports.editarGame = (req, res) => {
+// Editar um jogo existente
+export const editarGame = (req, res) => {
     const { id } = req.params;
     const { nome, edicao, preco } = req.body;
     const game = games.find(game => game.id === parseInt(id));
@@ -43,7 +44,7 @@ exports.editarGame = (req, res) => {
 };
 
 // Excluir um jogo
-exports.excluirGame = (req, res) => {
+export const excluirGame = (req, res) => {
     const { id } = req.params;
     const index = games.findIndex(game => game.id === parseInt(id));
   

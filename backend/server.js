@@ -1,7 +1,7 @@
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const gameRoutes = require('./routes/gameRoutes');
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import gameRoutes from './routes/gameRoutes.js';
 
 const app = express();
 
@@ -24,3 +24,5 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
+
+module.exports = app; 
